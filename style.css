@@ -1,0 +1,408 @@
+/* ===== Jastip by Panda — shared styles ===== */
+
+:root {
+  --green-50: #F3FAF0;
+  --green-100: #E8F5E0;
+  --green-200: #A3D873;
+  --green-300: #8FCB5C;
+  --green-400: #6FA83C;
+  --green-500: #4F9A2A;
+  --green-600: #3D7A1F;
+  --green-700: #1F4D14;
+  --text-muted: #5C8A4A;
+  --text-faint: #8AAE7C;
+  --border-soft: rgba(40, 80, 40, 0.15);
+  --border-faint: rgba(40, 80, 40, 0.12);
+  --white: #FFFFFF;
+  --font-display: 'Fredoka', 'Trebuchet MS', sans-serif;
+  --font-body: 'Nunito', 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--green-50);
+  color: var(--green-700);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+/* ---- Navbar ---- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border-faint);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .brand img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--green-300);
+  object-fit: cover;
+}
+
+.navbar .brand span {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--green-700);
+}
+
+.navbar .tagline {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.back-link {
+  font-size: 13px;
+  color: var(--green-600);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ---- Hero (homepage) ---- */
+.hero {
+  padding: 40px 24px 32px;
+  background: var(--green-50);
+  border-bottom: 1px solid var(--border-faint);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-600);
+  margin: 0 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 1.3;
+  color: var(--green-700);
+  margin: 0 0 12px;
+  max-width: 460px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero p.sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0 0 26px;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Page header (category pages) ---- */
+.page-header {
+  padding: 32px 24px 24px;
+  background: var(--green-100);
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--green-700);
+  margin: 8px 0 6px;
+}
+
+.page-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 480px;
+}
+
+/* ---- Calculator card ---- */
+.calc-card {
+  background: var(--white);
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  padding: 20px 20px 16px;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+}
+
+.calc-card .calc-label {
+  font-size: 13px;
+  color: var(--green-600);
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+
+.calc-card label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.calc-card input[type="number"] {
+  width: 100%;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: var(--font-body);
+}
+
+.calc-card input[type="range"] {
+  width: 100%;
+  accent-color: var(--green-500);
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0 14px;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.range-labels .current {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-700);
+}
+
+.calc-total {
+  border-top: 1px solid var(--border-faint);
+  padding-top: 12px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.calc-total .label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.calc-total .value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--green-600);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--green-500);
+  color: var(--white);
+}
+
+.btn-primary:hover { background: var(--green-600); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--green-600);
+  border: 1.5px solid var(--green-500);
+}
+
+.btn-outline:hover { background: var(--green-100); }
+
+.btn-small {
+  font-size: 13px;
+  padding: 8px 14px;
+}
+
+/* ---- How it works ---- */
+.how-it-works {
+  padding: 28px 24px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.how-it-works .section-label {
+  font-size: 13px;
+  color: var(--green-600);
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.steps-grid .step-icon {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.steps-grid h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-700);
+  margin: 0 0 4px;
+}
+
+.steps-grid p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---- Categories ---- */
+.categories {
+  padding: 28px 24px;
+  background: var(--green-50);
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.categories .section-label {
+  font-size: 13px;
+  color: var(--green-600);
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.category-card {
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: left;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 80, 40, 0.1);
+}
+
+.category-card .cat-icon {
+  font-size: 22px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.category-card span.cat-name {
+  font-size: 13px;
+  color: var(--green-700);
+  font-weight: 600;
+}
+
+/* ---- Product grid (category pages) ---- */
+.product-section {
+  padding: 28px 24px;
+  background: var(--green-50);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.product-card {
+  background: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.product-card .product-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--green-700);
+  margin: 0 0 4px;
+}
+
+.product-card p.desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.product-card .price {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-600);
+  margin-bottom: 10px;
+}
+
+.product-card .price span.note {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-faint);
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  padding: 24px 24px 32px;
+  background: var(--white);
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+/* ---- Bamboo decorations ---- */
+.bamboo-divider {
+  width: 100%;
+  height: 10px;
+  background: var(--green-300);
+  opacity: 0.5;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 24px; }
+}

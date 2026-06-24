@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jastip by Panda — titip beli dari China untuk mahasiswa SCUT</title>
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/tabler-icons.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="brand">
+    <img src="assets/logo.jpg" alt="Logo Jastip by Panda">
+    <span>jastip by panda</span>
+  </div>
+  <span class="tagline">titip beli dari China</span>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <p class="hero-eyebrow">jastip dari China, langsung ke kosmu</p>
+  <h1>titip beli apa aja, panda yang antar sampai kamar asramamu</h1>
+  <p class="sub">perlengkapan kuliah, alat tulis, sampai kebutuhan harian dari Taobao dan toko China lainnya — khusus untuk mahasiswa Indonesia di SCUT.</p>
+
+  <!-- Calculator -->
+  <div class="calc-card">
+    <p class="calc-label">hitung estimasi biayamu</p>
+
+    <label for="harga">harga barang (RMB)</label>
+    <input type="number" id="harga" value="100" min="0">
+
+    <label for="berat">berat (kg)</label>
+    <input type="range" id="berat" min="0.1" max="7" step="0.1" value="1">
+    <div class="range-labels">
+      <span>0.1 kg</span>
+      <span class="current" id="berat-out">1 kg</span>
+      <span>7 kg</span>
+    </div>
+
+    <div class="calc-total">
+      <span class="label">estimasi total</span>
+      <span class="value" id="total-out">Rp 383.500</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 18px; position: relative; z-index: 1;">
+    <a class="btn btn-primary" href="https://wa.me/6289508406204?text=Halo%20Jastip%20by%20Panda%2C%20saya%20mau%20tanya%20soal%20jastip" target="_blank" rel="noopener">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> chat via WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="how-it-works">
+  <p class="section-label">cara order, 3 langkah</p>
+  <div class="steps-grid">
+    <div>
+      <div class="step-icon"><i class="ti ti-link" aria-hidden="true"></i></div>
+      <h3>kirim link barang</h3>
+      <p>dari Taobao atau toko China lainnya</p>
+    </div>
+    <div>
+      <div class="step-icon"><i class="ti ti-receipt" aria-hidden="true"></i></div>
+      <h3>terima rincian harga</h3>
+      <p>total sudah termasuk semua biaya</p>
+    </div>
+    <div>
+      <div class="step-icon"><i class="ti ti-package" aria-hidden="true"></i></div>
+      <h3>barang sampai ke kos</h3>
+      <p>diantar langsung ke asrama kampus</p>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="categories">
+  <div class="bamboo-divider"></div>
+  <p class="section-label" style="margin-top: 18px;">paling sering dicari mahasiswa baru</p>
+  <div class="category-grid">
+    <a class="category-card" href="kategori-asrama.html">
+      <i class="ti ti-bed cat-icon" aria-hidden="true"></i>
+      <span class="cat-name">perlengkapan asrama</span>
+    </a>
+    <a class="category-card" href="kategori-alat-tulis.html">
+      <i class="ti ti-pencil cat-icon" aria-hidden="true"></i>
+      <span class="cat-name">alat tulis & kuliah</span>
+    </a>
+    <a class="category-card" href="kategori-harian.html">
+      <i class="ti ti-droplet cat-icon" aria-hidden="true"></i>
+      <span class="cat-name">kebutuhan harian</span>
+    </a>
+    <a class="category-card" href="https://wa.me/6289508406204?text=Halo%2C%20saya%20mau%20tanya%20barang%20lain" target="_blank" rel="noopener">
+      <i class="ti ti-dots cat-icon" aria-hidden="true"></i>
+      <span class="cat-name">lainnya, tanya aja</span>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>sudah dipakai puluhan mahasiswa baru di SCUT setiap semester</p>
+  <a class="btn btn-outline" href="https://wa.me/6289508406204?text=Halo%2C%20saya%20mau%20tanya%20dulu" target="_blank" rel="noopener">
+    chat dulu, gratis tanya-tanya
+  </a>
+</footer>
+
+<script>
+const harga = document.getElementById('harga');
+const berat = document.getElementById('berat');
+const beratOut = document.getElementById('berat-out');
+const totalOut = document.getElementById('total-out');
+
+function hitung() {
+  const h = parseFloat(harga.value) || 0;
+  const b = parseFloat(berat.value) || 0;
+  const ongkir = b * 235000;
+  const hargaRupiah = h * 8.7;
+  const serviceFee = (hargaRupiah + ongkir) * 0.1;
+  const jastipFee = 15000;
+  const total = hargaRupiah + ongkir + serviceFee + jastipFee;
+  beratOut.textContent = b.toFixed(1) + ' kg';
+  totalOut.textContent = 'Rp ' + Math.round(total).toLocaleString('id-ID');
+}
+
+harga.addEventListener('input', hitung);
+berat.addEventListener('input', hitung);
+hitung();
+</script>
+
+</body>
+</html>
